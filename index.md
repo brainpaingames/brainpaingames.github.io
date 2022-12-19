@@ -1,4 +1,10 @@
 ---
-title: Welcome to my blog
+title: Brainpaingames
 ---
+
+Index content here
+==================
+
+testing
+
 
