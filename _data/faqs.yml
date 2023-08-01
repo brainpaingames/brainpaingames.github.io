@@ -1,0 +1,18 @@
+- question: "This is awesome/stupid. Why did you do this?"
+  answer: "Well, in short, because I want to prove a point to myself. Longer story: Years ago I was wondering about what classes of problems a superhuman AI would be way better solving than humans. Problems which require higher dimensional spatial awareness came to my mind. After a bit of more pondering, I thought that given proper input/feedback of environment to human brain, there is no reason why our brain should not be able to figure out higher dimensions. Nobody seemed to be doing a VR environment where you could actually move in 4d, so I decided to do it myself."
+
+- question: "The graphics and UI are crappy, and this does not look like a serious thing."
+  answer: "You are absolutely right. However, This project is more about scratching an intellectual itch rather than looking pretty. But hey, if you're willing to support the project at [https://www.buymeacoffee.com/brainpaingames](https://www.buymeacoffee.com/brainpaingames), I might one day be able to hire a pro to jazz things up."
+
+- question: "I'd like to keep the copyright of my work that I upload to Hypersprawl. Would that be possible?"
+  answer: "Personally, I feel copyright can slow down the spread of new ideas, but I get where you're coming from. If you're serious about it, drop me a line at info@brainpaingames.com. PLease provide estimate of the net worth/market value of the entity wanting to keep copyright as well as initial estimate of the compensation you would be willing to pay for the privilege."
+
+- question: "What, no double rotation?"
+  answer: "Yep, that is a shame. That's one of the things pretty high on my roadmap. I think I try first to undertand the simple rotations, though."
+
+- question: "I'd really like you to implement feature x"
+  answer: "I'd probably like to add that too. But resources are tight. You can propose it officially by opening an issue on the site's repository at [https://github.com/brainpaingames/brainpaingames.github.io](https://github.com/brainpaingames/brainpaingames.github.io). If you're serious about it, consider supporting the project at [https://www.buymeacoffee.com/brainpaingames](https://www.buymeacoffee.com/brainpaingames) and mention your request in the comments."
+
+- question: "Are there any online communities chatting about Hypersprawl?"
+  answer: "Right now, the best place to discuss is on the site's GitHub repository. If a decent amount of chatter starts, I'll think about setting up a dedicated chat platform, like a Discord server."
+

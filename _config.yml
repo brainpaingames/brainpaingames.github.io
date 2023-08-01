@@ -1,0 +1,12 @@
+theme: minima
+author: info@brainpaingames.com
+
+
+header_pages:
+ - faq.md
+ - tutorials.md
+ - Hypershack.md
+ - Hypersprawl.md
+title: Brainpaingames
+
+excerpt_separator: <!--more-->
