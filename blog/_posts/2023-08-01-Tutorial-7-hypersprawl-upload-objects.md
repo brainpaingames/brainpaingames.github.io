@@ -7,16 +7,18 @@ category: tutorial
 
 So, you have played around in Hypershack and designed a cool 4 dimensional shape that you would like to upload to Hypersprawl. In this tutorial we go through how to do that.
 
+<!--more-->
+
 Note: 
 -----
 The performance of Hypershack version 0.1 is abysmally bad if there are any significant number of 4d objects being rendered. Thus at the it is severely restricted both what you can see at one session and what you can upload to Hypersprawl 0.1. When you upload objects to Hypersprawl 0.1, you can have only 10 objects on your block. 
 
-1. (Optional) Premium account by supporting us
+(Optional) Premium account by supporting us
 ----------------------------------------------
 
 If you want to get premium addresses in hypersprawl to upload your objects, go to [https://www.buymeacoffee.com/brainpaingames](https://www.buymeacoffee.com/brainpaingames) and make a one time donation or a subscription to get access to districts closer to the Black Sun.
 
-2. Log in to hypersprawl.com
+Log in to hypersprawl.com
 ----------------------------
 
 Go to [www.hypersprawl.com](https://www.hypersprawl.com) and submit your email address with the form. You will get a link to your email that is valid for the next 24 hours to manage your Hypersprawl real estate. 
