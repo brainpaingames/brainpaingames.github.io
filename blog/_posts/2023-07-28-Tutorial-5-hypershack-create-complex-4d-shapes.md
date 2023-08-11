@@ -1,5 +1,5 @@
 ---
-title: "Tutorial 5 - Hypersprawl - Create complex 4d shapes"
+title: "Tutorial 5 - Hypershack - Create complex 4d shapes"
 category: tutorial
 ---
 

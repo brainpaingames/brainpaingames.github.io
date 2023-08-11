@@ -54,8 +54,8 @@ There are sound beacons for positive x, y, z, and w axis.
 
 - x: guitar
 - y: drums
-- w: saxophone
-- z: church bells
+- z: saxophone
+- w: church bells
 
 These beacons are also visible as spheres with same colors as respective compass bars. 
 
