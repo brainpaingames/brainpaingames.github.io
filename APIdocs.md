@@ -56,7 +56,7 @@ Debug logging
 ### GetIntRegistry
 
 **Description:**  
-Retrieves the integer value from the specified index of the integer registry.
+GetIntRegistry provides read access to a global array of integer variables within the game's environment. These variables are indexed from 0 to 63, allowing the storage and retrieval of up to 64 separate integer values. This method is particularly useful for maintaining state or sharing data between different scripts and game objects. However, due to the global nature of the registry and its accessibility across the entire game, developers should implement access with caution to prevent race conditions or data inconsistency. When using this function, consider the game's concurrency model and ensure that any critical sections are properly handled.
 
 **Syntax:**
 ```javascript
@@ -81,7 +81,7 @@ log('The value in the registry at index 5 is ' + intRegistryValue);
 ### SetIntRegistry
 
 **Description:**  
-Sets the integer value at the specified index of the integer registry.
+SetIntRegistry allows for the assignment of integer values to a globally accessible integer array within the game's environment. The function targets an index between 0 and 63 and updates that index with the provided integer value. This global accessibility means that the same registry can be written by multiple objects concurrently. Therefore, when designing game logic that interacts with this registry, developers must be cautious and deliberate about when and how they update these values. Consider implementing a locking mechanism or using flags to indicate when a value is being written to, to avoid collisions and ensure data integrity.
 
 **Syntax:**
 ```javascript
