@@ -9,8 +9,47 @@ This section provides detailed documentation for the JavaScript API of the `Game
 
 ## Table of Contents
 
+Registry methods
+
 - [GetIntRegistry](#getintregistry)
 - [SetIntRegistry](#setintregistry)
+- [GetFloatRegistry](#getfloatregistry)
+- [SetFloatRegistry](#setfloatregistry)
+- [GetStringRegistry](#getstringregistry)
+- [SetStringRegistry](#setstringregistry)
+
+User Programmable Text Methods
+
+- [getUserProgrammableText1](#getuserprogrammabletext1)
+- [setUserProgrammableText1](#setuserprogrammabletext1)
+- [getUserProgrammableText2](#getuserprogrammabletext2)
+- [setUserProgrammableText2](#setuserprogrammabletext2)
+
+Collision Methods
+
+- [IsCollided](#IsCollided)
+- [IsCollidedWithPlayer](#IsCollidedWithPlayer)
+
+Position & Movement Methods
+
+- [GetPlayerPosition3d](#GetPlayerPosition3d)
+- [ConvertTo4dPoint](#ConvertTo4dPoint)
+- [CalcMinMaxCoord](#CalcMinMaxCoord)
+- [jsSetPosition](#jsSetPosition)
+- [jsMovePosition](#jsMovePosition)
+- [jsPoint4d](#jsPoint4d)
+- [jsVector3](#jsVector3)
+
+Color & Light Methods
+
+- [SetColor](#SetColor)
+- [getTime](#getTime)
+- [SetLight](#SetLight)
+
+Debug logging
+
+- [log](#log)
+
 
 ---
 
@@ -33,8 +72,8 @@ var value = go4d.getIntRegistry(index);
 **JavaScript Example:**
 ```javascript
 // Retrieve the value from the integer registry at index 5
-var registryValue = go4d.getIntRegistry(5);
-console.log('The value in the registry at index 5 is ' + registryValue);
+var intRegistryValue = go4d.getIntRegistry(5);
+log('The value in the registry at index 5 is ' + intRegistryValue);
 ```
 
 ---
