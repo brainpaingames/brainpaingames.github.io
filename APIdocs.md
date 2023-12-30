@@ -1,39 +1,16 @@
 ---
 layout: default
-title: GameObject4d API Reference
+title: JavaScript API Reference for GameObject4d
 ---
 
-# GameObject4d API Reference
+# JavaScript API Reference for GameObject4d
 
-This section provides detailed documentation for the `GameObject4d` class in the game API. Each method and property of the `GameObject4d` class is described with its purpose, syntax, parameters, return values, and examples.
+This section provides detailed documentation for the JavaScript API of the `GameObject4d` class. Each method is accessible through JavaScript code executed within the Unity environment via Jint.
 
 ## Table of Contents
 
-- [GameObject4d Constructor](#gameobject4d-constructor)
 - [GetIntRegistry](#getintregistry)
 - [SetIntRegistry](#setintregistry)
-- [GetFloatRegistry](#getfloatregistry)
-
----
-
-### GameObject4d Constructor
-
-**Description:**  
-Creates a new instance of the `GameObject4d` class.
-
-**Syntax:**
-```csharp
-GameObject4d myObject = new GameObject4d(string objname, bool isDyn);
-```
-
-**Parameters:**  
-- `objname` (String, optional): The name of the 4D object. Default is "4d Object".
-- `isDyn` (Boolean, optional): Specifies whether the object is dynamic. Default is `false`.
-
-**Example:**
-```csharp
-GameObject4d my4dObject = new GameObject4d("My4DObject", true);
-```
 
 ---
 
@@ -43,18 +20,42 @@ GameObject4d my4dObject = new GameObject4d("My4DObject", true);
 Retrieves the integer value from the specified index of the integer registry.
 
 **Syntax:**
-```csharp
-int value = myObject.GetIntRegistry(int i);
+```javascript
+var value = go4d.getIntRegistry(index);
 ```
 
 **Parameters:**  
-- `i` (int): The index of the integer registry.
+- `index` (Number): The index of the integer registry.
 
 **Returns:**  
-- `int`: The integer value at the specified index.
+- `Number`: The integer value at the specified index.
 
-**Example:**
-```csharp
-int registryValue = myObject.GetIntRegistry(5);
+**JavaScript Example:**
+```javascript
+// Retrieve the value from the integer registry at index 5
+var registryValue = go4d.getIntRegistry(5);
+console.log('The value in the registry at index 5 is ' + registryValue);
+```
+
+---
+
+### SetIntRegistry
+
+**Description:**  
+Sets the integer value at the specified index of the integer registry.
+
+**Syntax:**
+```javascript
+go4d.setIntRegistry(index, value);
+```
+
+**Parameters:**  
+- `index` (Number): The index of the integer registry where the value will be set.
+- `value` (Number): The value to set at the specified index of the integer registry.
+
+**JavaScript Example:**
+```javascript
+// Set the integer registry at index 5 to the value 10
+go4d.setIntRegistry(5, 10);
 ```
 
