@@ -274,3 +274,306 @@ go4d.setUserProgrammableText2('New mission objective: Reach the portal.');
 log('User Programmable Text 2 updated with new mission objective.');
 ```
 
+
+### IsCollided
+
+**Description:**  
+`IsCollided` checks if a given `Point4d` is within a specified `dist` distance from the object. It performs a bounding box collision detection by comparing the point's coordinates against the object's defined minimum and maximum bounds in each of the four dimensions. The function returns `false` as soon as it determines the point is outside the collision bounds in any dimension, optimizing the check to avoid unnecessary calculations.
+
+**Syntax:**
+```javascript
+var collision = go4d.IsCollided(point, dist);
+```
+
+**Parameters:**  
+- `point` (Point4d): The 4D point to check for collision, an object with `X`, `Y`, `Z`, and `W` properties.
+- `dist` (Number): The collision threshold distance.
+
+**Returns:**  
+- `Boolean`: Returns `true` if the point is within the collision bounds, otherwise `false`.
+
+**JavaScript Example:**
+```javascript
+// Assuming 'go4d.CreatePoint4d' is a method exposed to JavaScript that creates a Point4d object
+var point = go4d.CreatePoint4d(10, 10, 10, 10);
+var isCollided = go4d.IsCollided(point, 5);
+log('Collision detected: ' + isCollided);
+```
+
+### IsCollidedWithPlayer
+
+**Description:**  
+`IsCollidedWithPlayer` determines whether the player is colliding with the object within a certain distance. This method is useful for detecting player interactions with objects in the game world. It utilizes the `IsCollided` function by converting the player's current 3D position to a 4D point and checking for a collision within the specified `dist`.
+
+**Syntax:**
+```javascript
+var playerCollision = go4d.IsCollidedWithPlayer(dist);
+```
+
+**Parameters:**  
+- `dist` (Number): The distance threshold for checking collision with the player.
+
+**Returns:**  
+- `Boolean`: Returns `true` if the player is colliding with the object, otherwise `false`.
+
+**JavaScript Example:**
+```javascript
+// Check if the player is colliding with the object within a distance of 1 unit
+var isPlayerColliding = go4d.IsCollidedWithPlayer(1);
+log('Player collision detected: ' + isPlayerColliding);
+```
+
+
+### CreatePoint4d
+
+**Description:**  
+`CreatePoint4d` creates a new `Point4d` object given four float values representing the x, y, z, and w coordinates in the 4D space. This function is essential for working with positions and dimensions in a 4D environment and allows for the instantiation of a 4D point from JavaScript code.
+
+**Syntax:**
+```javascript
+var point4d = go4d.CreatePoint4d(x, y, z, w);
+```
+
+**Parameters:**  
+- `x` (Number): The x-coordinate of the 4D point.
+- `y` (Number): The y-coordinate of the 4D point.
+- `z` (Number): The z-coordinate of the 4D point.
+- `w` (Number): The w-coordinate (fourth dimension) of the 4D point.
+
+**Returns:**  
+- `Point4d`: A new `Point4d` object with the specified coordinates.
+
+**JavaScript Example:**
+```javascript
+// Example of creating a Point4d object at position (1, 2, 3, 4)
+var newPoint4d = go4d.CreatePoint4d(1, 2, 3, 4);
+log(newPoint4d);
+```
+
+
+### GetPlayerPosition3d
+
+**Description:**  
+`GetPlayerPosition3d` retrieves the current 3D position of the player as a `Vector3` object. This method is useful for obtaining the player's location in the game world, which can then be used for various gameplay mechanics, such as positioning, collision detection, and more.
+
+**Syntax:**
+```javascript
+var playerPosition3d = go4d.GetPlayerPosition3d();
+```
+
+**Returns:**  
+- `Vector3`: The player's current 3D position.
+
+**JavaScript Example:**
+```javascript
+// Example of retrieving the player's current 3D position
+var currentPlayerPosition = go4d.GetPlayerPosition3d();
+log('Player\'s 3D position: ' + currentPlayerPosition);
+```
+
+
+### ConvertTo4dPoint
+
+**Description:**  
+`ConvertTo4dPoint` converts a `Vector3` object representing a 3D position into a `Point4d` object for use in 4D space. It is a critical function for bridging the gap between 3D and 4D representations within the game. The function ensures that the necessary conversions are made so that 3D coordinates can be accurately represented and manipulated in the game's 4D environment.
+
+**Syntax:**
+```javascript
+var point4d = go4d.ConvertTo4dPoint(vector3);
+```
+
+**Parameters:**  
+- `vector3` (Vector3): The 3D position to convert into a 4D point.
+
+**Returns:**  
+- `Point4d`: The corresponding 4D point.
+
+**JavaScript Example:**
+```javascript
+// Example of converting a Vector3 position to a Point4d
+var position3d = { x: 5, y: 10, z: 15 };
+var point4d = go4d.ConvertTo4dPoint(position3d);
+log('Converted 4D point: ' + point4d);
+```
+
+
+
+
+
+
+
+
+
+
+### jsSetPosition
+
+**Description:**  
+`jsSetPosition` assigns a new position to an object within the 4D space. This method is specifically designed for `Fivecell4d` objects and allows for setting their position to a new point defined by the given x, y, z, and w coordinates. If the object is not a `Fivecell4d`, the method will log a message indicating that setting the position is unsupported.
+
+**Syntax:**
+```javascript
+go4d.jsSetPosition(x, y, z, w);
+```
+
+**Parameters:**  
+- `x` (Number): The x-coordinate of the new position.
+- `y` (Number): The y-coordinate of the new position.
+- `z` (Number): The z-coordinate of the new position.
+- `w` (Number): The w-coordinate of the new position.
+
+**JavaScript Example:**
+```javascript
+// Example of setting a new position for a Fivecell4d object
+go4d.jsSetPosition(10, 20, 30, 40);
+```
+
+### jsMovePosition
+
+**Description:**  
+`jsMovePosition` moves an object by a vector defined by the given x, y, z, and w values. This method applies to `Fivecell4d` objects, adding the specified values to the object's current position. If the object is not a `Fivecell4d`, it logs a message indicating that the object movement is unsupported.
+
+**Syntax:**
+```javascript
+go4d.jsMovePosition(x, y, z, w);
+```
+
+**Parameters:**  
+- `x` (Number): The x value of the movement vector.
+- `y` (Number): The y value of the movement vector.
+- `z` (Number): The z value of the movement vector.
+- `w` (Number): The w value of the movement vector.
+
+**JavaScript Example:**
+```javascript
+// Example of moving a Fivecell4d object by a specific vector
+go4d.jsMovePosition(1, 2, 3, 4);
+```
+
+### jsPoint4d
+
+**Description:**  
+`jsPoint4d` creates a JavaScript object that represents a point in 4D space. It takes a `Point4d` object from the game environment and converts it into a JavaScript object with x, y, z, and w properties that can be easily accessed and manipulated within JavaScript code.
+
+**Syntax:**
+```javascript
+var pointObj = go4d.jsPoint4d(point4d);
+```
+
+**Parameters:**  
+- `point4d` (Point4d): A `Point4d` object from the game.
+
+**Returns:**  
+- `Object`: A new JavaScript object representing the 4D point.
+
+**JavaScript Example:**
+```javascript
+// Example of converting a Point4d to a JavaScript object
+var point4d = go4d.CreatePoint4d(10, 20, 30, 40);
+var pointObj = go4d.jsPoint4d(point4d);
+console.log('4D point object: ', pointObj);
+```
+
+### jsVector3
+
+**Description:**  
+`jsVector3` creates a JavaScript object that represents a vector in 3D space. It converts a `Vector3` object from the Unity environment into a JavaScript object with x, y, and z properties.
+
+**Syntax:**
+```javascript
+var vectorObj = go4d.jsVector3(vector3);
+```
+
+**Parameters:**  
+- `vector3` (Vector3): A `Vector3` object from Unity.
+
+**Returns:**  
+- `Object`: A new JavaScript object representing the 3D vector.
+
+**JavaScript Example:**
+```javascript
+// Example of converting a Vector3 to a JavaScript object
+var playerPosition = go4d.GetPlayerPosition3d();
+var vectorObj = go4d.jsVector3(playerPosition);
+console.log('3D vector object: ', vectorObj);
+```
+
+### SetColor
+
+**Description:**  
+`SetColor` changes the color of the 4D object by parsing a string-based color representation (such as hex codes or CSS color names) into a Unity `Color` object. If the color string is valid, it updates the object's color list with the new RGBA values and triggers a redraw of the meshes.
+
+**Syntax:**
+```javascript
+go4d.SetColor(clr);
+```
+
+**Parameters:**  
+- `clr` (String): A string representing the color in CSS format.
+
+**JavaScript Example:**
+```javascript
+// Example of setting an object's color to blue using a hex color code
+go4d.SetColor("#0000FF");
+```
+
+### getTime
+
+**Description:**  
+`getTime` provides the current time since the start of the game. It retrieves the time in seconds from the moment the game started, which can be used for time-based calculations, animations, or as a game timer.
+
+**Syntax:**
+```javascript
+var currentTime = go4d.getTime();
+```
+
+**Returns:**  
+- `Number`: The time in seconds since the game started.
+
+**JavaScript Example:**
+```javascript
+// Example of getting the current game time
+var timeSinceStart = go4d.getTime();
+console.log('Time since game start: ' + timeSinceStart + ' seconds');
+```
+
+### SetLight
+
+**Description:**  
+`SetLight` adjusts the intensity of the light emitted by the object's material in the game. It uses a string to set the color and a float for the intensity of the light. If the color string is not a valid color, it defaults to white.
+
+**Syntax:**
+```javascript
+go4d.SetLight(clr, intensity);
+```
+
+**Parameters:**  
+- `clr` (String): The color of the light in CSS format.
+- `intensity` (Number): The intensity of the light.
+
+**JavaScript Example:**
+```javascript
+// Example of setting the object's light color to red with half intensity
+go4d.SetLight("#FF0000", 0.5);
+```
+
+### Logging Function
+
+**Description:**  
+The logging function is set up to redirect JavaScript console messages to the Unity debug log. This allows messages from JavaScript code executed through Jint to appear in browser console, aiding in debugging and development.
+
+**Syntax:**
+```javascript
+log(message);
+```
+
+**Parameters:**  
+- `message` (Object): The message to log. It can be a string or any object that can be stringified.
+
+**JavaScript Example:**
+```javascript
+// Example of logging a message to the Unity console
+log('This message will appear in browser console.');
+```
+
+
+
