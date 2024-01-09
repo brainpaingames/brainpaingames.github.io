@@ -3,10 +3,9 @@ author: info@brainpaingames.com
 
 
 header_pages:
- - faq.md
- - tutorials.md
+ - APIdocs.md
+ - ControllerDocs.md
  - Hypershack.md
- - Hypersprawl.md
 title: Brainpaingames
 
 excerpt_separator: <!--more-->

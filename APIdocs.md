@@ -1,13 +1,143 @@
 ---
 layout: default
-title: JavaScript API Reference for GameObject4d
+title: JSON/JavaScript API Reference for GameObject4d
 ---
+
+go4d members need to be documented and tested (name, iscollider etc.)
+
+
+
+# JSON format
+
+The 4d game object setup is defined by a list of json objcts. Here is an example of a list of a single 4d object, the attributes are explained below:
+
+```json
+[
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall1",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,-1] },
+            {"point": [11,-1,-1,-1] },
+            {"point": [-1,11,-1,-1] },
+            {"point": [-1,-1,11,-1] },
+            {"point": [-1,-1,-1,0] }        
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    }
+]
+```
+---
+
+### objecttype
+
+**Description:**  
+Objecttype defines the four dimensional object shape
+
+
+**Possible values:**  
+- `tesseract` : Tesseract
+- `fivecell` : 5-cell
+- `cube4d` :  A three dimensional cube within 4 dimensions
+
+---
+
+### gameobjectname
+
+**Description:**  
+Game object name. 
+
+---
+
+### colr
+
+**Description:**  
+ A list of four floats between  0 and 1 having the values for R, G, B and alpha.
+
+---
+
+### points4d
+list of point objects that define the  (initial) position and shape of the object in detail. The amount of points needed depends on the object type:
+
+- `tesseract` : 5 points spanning the tesseract (or whatever is the 4 dimensional version of parallelogram to be more precise). First point is the first vertex and the remaining points are the adjacent vertices to that. 
+- `fivecell` : 5 points specifying the vertices of the fivecell.
+- `cube4d` :  4 points spanning the cube (or parallelogram to be more precise). first one is the first vertex and the remaining points are the adjacent vertices to that.
+
+---
+
+### isDynamic
+
+**Description:**  
+This defines whether the javascript of the object is run once when initialized or regularly at set periods. 
+
+
+**Possible values:**  
+- `true` : The javascript is executed at x.x second intervals
+- `false` : The javascript is executed only once. 
+
+---
+
+### js
+
+**Description:**  
+The javascript to be executed for the gameobject. See later in this page for documentation of the js API. 
+
+Note: the javascript needs to be escaped to single row to be valid json text object. Here is a small python snippet you can use to escape javascript string to a valid json object and vice versa:
+
+
+```python
+
+import sys
+import json
+import os
+
+def main(file_path):
+    file_ext = os.path.splitext(file_path)[1]
+    
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+
+        # Determine the action based on the file extension
+        if file_ext.lower() == '.js':
+            # Convert JS to JSON
+            json_object = {"js": content}
+            output_file = file_path.rsplit('.', 1)[0] + '.json'
+            with open(output_file, 'w', encoding='utf-8') as file:
+                json.dump(json_object, file, ensure_ascii=False, indent=4)
+
+        elif file_ext.lower() == '.json':
+            # Convert JSON to JS
+            json_object = json.loads(content)
+            output_file = file_path.rsplit('.', 1)[0] + '.js'
+            with open(output_file, 'w', encoding='utf-8') as file:
+                file.write(json_object["js"])
+
+        else:
+            print("Unsupported file format. Please use .js or .json files.")
+            return
+
+        print(f"File created: {output_file}")
+
+    except IOError as e:
+        print(f"Error: {e}")
+    except json.JSONDecodeError as e:
+        print(f"Invalid JSON format: {e}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <file_path>")
+    else:
+        main(sys.argv[1])
+```
+
 
 # JavaScript API Reference for GameObject4d
 
 This section provides detailed documentation for the JavaScript API of the `GameObject4d` class. Each method is accessible through JavaScript code executed within the Unity environment via Jint.
 
-## Table of Contents
 
 Registry methods
 
@@ -97,6 +227,7 @@ go4d.setIntRegistry(index, value);
 // Set the integer registry at index 5 to the value 10
 go4d.setIntRegistry(5, 10);
 ```
+---
 
 ### GetFloatRegistry
 
@@ -121,6 +252,7 @@ var floatRegistryValue = go4d.getFloatRegistry(2);
 log('Float value retrieved from index 2: ' + floatRegistryValue);
 ```
 
+---
 
 ### SetFloatRegistry
 
@@ -143,8 +275,7 @@ go4d.setFloatRegistry(2, 3.14159);
 log('Float registry at index 2 set to ' + 3.14159);
 ```
 
-
-
+---
 
 ### GetStringRegistry
 
@@ -169,6 +300,7 @@ var stringRegistryValue = go4d.getStringRegistry(1);
 log('String value retrieved from index 1: ' + stringRegistryValue);
 ```
 
+---
 
 ### SetStringRegistry
 
@@ -191,6 +323,7 @@ go4d.setStringRegistry(1, 'PlayerOne');
 log('String registry at index 1 set to "PlayerOne"');
 ```
 
+---
 
 ### getUserProgrammableText1
 
@@ -212,6 +345,8 @@ var currentText1 = go4d.getUserProgrammableText1();
 log('User Programmable Text 1 says: ' + currentText1);
 ```
 
+---
+
 ### setUserProgrammableText1
 
 **Description:**  
@@ -232,7 +367,7 @@ go4d.setUserProgrammableText1('New mission objective: Reach the portal.');
 log('User Programmable Text 1 updated with new mission objective.');
 ```
 
-
+---
 
 ### getUserProgrammableText2
 
@@ -254,6 +389,8 @@ var currentText2 = go4d.getUserProgrammableText2();
 log('User Programmable Text 2 says: ' + currentText2);
 ```
 
+---
+
 ### setUserProgrammableText2
 
 **Description:**  
@@ -274,6 +411,7 @@ go4d.setUserProgrammableText2('New mission objective: Reach the portal.');
 log('User Programmable Text 2 updated with new mission objective.');
 ```
 
+---
 
 ### IsCollided
 
@@ -300,6 +438,8 @@ var isCollided = go4d.IsCollided(point, 5);
 log('Collision detected: ' + isCollided);
 ```
 
+---
+
 ### IsCollidedWithPlayer
 
 **Description:**  
@@ -323,6 +463,7 @@ var isPlayerColliding = go4d.IsCollidedWithPlayer(1);
 log('Player collision detected: ' + isPlayerColliding);
 ```
 
+---
 
 ### CreatePoint4d
 
@@ -350,6 +491,7 @@ var newPoint4d = go4d.CreatePoint4d(1, 2, 3, 4);
 log(newPoint4d);
 ```
 
+---
 
 ### GetPlayerPosition3d
 
@@ -371,6 +513,7 @@ var currentPlayerPosition = go4d.GetPlayerPosition3d();
 log('Player\'s 3D position: ' + currentPlayerPosition);
 ```
 
+---
 
 ### ConvertTo4dPoint
 
@@ -396,14 +539,7 @@ var point4d = go4d.ConvertTo4dPoint(position3d);
 log('Converted 4D point: ' + point4d);
 ```
 
-
-
-
-
-
-
-
-
+---
 
 ### jsSetPosition
 
@@ -427,6 +563,8 @@ go4d.jsSetPosition(x, y, z, w);
 go4d.jsSetPosition(10, 20, 30, 40);
 ```
 
+---
+
 ### jsMovePosition
 
 **Description:**  
@@ -448,6 +586,8 @@ go4d.jsMovePosition(x, y, z, w);
 // Example of moving a Fivecell4d object by a specific vector
 go4d.jsMovePosition(1, 2, 3, 4);
 ```
+
+---
 
 ### jsPoint4d
 
@@ -473,6 +613,8 @@ var pointObj = go4d.jsPoint4d(point4d);
 console.log('4D point object: ', pointObj);
 ```
 
+---
+
 ### jsVector3
 
 **Description:**  
@@ -497,6 +639,8 @@ var vectorObj = go4d.jsVector3(playerPosition);
 console.log('3D vector object: ', vectorObj);
 ```
 
+---
+
 ### SetColor
 
 **Description:**  
@@ -515,6 +659,8 @@ go4d.SetColor(clr);
 // Example of setting an object's color to blue using a hex color code
 go4d.SetColor("#0000FF");
 ```
+
+---
 
 ### getTime
 
@@ -536,6 +682,8 @@ var timeSinceStart = go4d.getTime();
 console.log('Time since game start: ' + timeSinceStart + ' seconds');
 ```
 
+---
+
 ### SetLight
 
 **Description:**  
@@ -556,6 +704,8 @@ go4d.SetLight(clr, intensity);
 go4d.SetLight("#FF0000", 0.5);
 ```
 
+---
+
 ### Logging Function
 
 **Description:**  
@@ -574,6 +724,3 @@ log(message);
 // Example of logging a message to the Unity console
 log('This message will appear in browser console.');
 ```
-
-
-

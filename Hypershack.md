@@ -1,24 +1,35 @@
 Hypershack
 ----------
 
-Hypershack is a standalone, private space to tinker and learn with 4d objects. It is basically just a static website with no concept of saving or  sharing your objects. If you want to save and share your objects - and see objects built by oter people, have a look at hypersprawl. Anyway, it is recommended to first create your objects in hypershack before uploading them to hypersprawl.  
+Hypershack is a standalone, private space to tinker and learn with 4d objects in Virtual Reality. 
 
-From this page you can access the latest version of hypershack as well as all previous versions and see the changelog. 
+when you open Hypershack, you are provided three predefined levels of a simple game where you need to find hypergems (red fivecells) within a tesseract. Technically you can create your own 4d environments by defining the objects in json and specifying the object behaviour in javascript, [see api documentaion here.](APIdocs)   However, there are some issues with copy pasting to unity WebGL games, so unfortunately the process is a bit cumbersome, especially in Quest 2 headset, as you need to somehow make the file available in the device filesystem and open it using the small file load button in the game start screen. Here is one way that has been tested to work:
 
-If you are new to hypershack, please see tutorial series [here](index.html)
+- Make your json accessible from internet (note you need to escape the javascript to be json embeddable)
+- copy it to json online editor that can be used to actually download the file
+- when you have the file downloaded in the Downloads folder, Run hypershack and open the file by clicking 
 
-Latest Hypershack
------------------
 
- [Hypershack 0.1](hypershack-0.1)
+Access latest Hypershack
+------------------------
 
-Changes from 0.0
+ [Hypershack 0.2](hypershack-0.2)
+
+Changes from 0.1
 ================
-Rudimentary functionality.
+
+- VR controller movement and rotation
+- Double rotations
+- Javascript programmable 4d objects
 
 Hypershack archive
 ------------------
 
+ [Hypershack 0.1](hypershack-0.1)
+
+Changelog:
+
+Rudimentary functionality.
 
 
 
