@@ -1,6 +1,6 @@
 # 4D VR Game Control Guide
 
-The game is designed to be played in stationary pose, not roomscale. Left controller is used to move in differet directions and right controller is used to rotate in different planes and plane combinations. Note that the forward direction is indicated in the game with a white crosshair, just turning your head will not change the direction vectors. You can think it like siting in a plane cockpit, you can look aroud, but controls move the plane based on plane orientation, not pilot head orientation. 
+The game is designed to be played in stationary pose, not roomscale. Left controller is used to move in differet directions and right controller is used to rotate in different planes and plane combinations. Note that the forward direction is indicated in the game with a white crosshair, just turning your head will not change the direction vectors. You can think it like sitting in a plane cockpit, you can look aroud, but controls move the plane based on plane orientation, not pilot head orientation. 
 
 ## Left Controller Instructions
 
