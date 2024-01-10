@@ -117,4 +117,3 @@ These keyboard controls are included in the documentation for those who wish to 
 - **Double Rotation in Right-Up (Negative) and Forward-Hither (Positive) Planes:**
   - Hold **Shift** and press key **6** for this double rotation.
 
-Note: These keys enable the player to perform complex double rotations in different planes, providing advanced navigational control in the 4D VR game.

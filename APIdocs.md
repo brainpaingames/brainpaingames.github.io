@@ -74,7 +74,7 @@ This defines whether the javascript of the object is run once when initialized o
 
 
 **Possible values:**  
-- `true` : The javascript is executed at x.x second intervals
+- `true` : The javascript is executed at 0.2 second intervals
 - `false` : The javascript is executed only once. 
 
 ---

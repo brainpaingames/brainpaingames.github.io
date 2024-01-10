@@ -17,8 +17,8 @@ Access latest Hypershack
 
  [Hypershack 0.2](hypershack-0.2)
 
-Changes from 0.1
-================
+0.2 Changelog
+=============
 
 - VR controller movement and rotation
 - Double rotations
@@ -29,7 +29,8 @@ Hypershack archive
 
  [Hypershack 0.1](hypershack-0.1)
 
-Changelog:
+0.1 Changelog
+=============
 
 Rudimentary functionality.
 
