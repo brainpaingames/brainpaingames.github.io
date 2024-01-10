@@ -10,6 +10,8 @@ when you open Hypershack, you are provided three predefined levels of a simple g
 - when you have the file downloaded in the Downloads folder, Run hypershack and open the file by clicking 
 
 
+Finally, a small hint. If you get lost with the orientations and want to get back to normal 3d orientation wihtout hither/thither component, first rotate yourself so that the red beacon is aligned as well as possible with the crosshair (that is, the red beacon is in front of you.) After that, rotate in forward/hither plane (click right triccer and push right thumbstic forward/backward) until you see the red bar (almost) disappear in the compass. Now you are in the "normal" 3d space and you can orient yourself with normal 3d rotations to align the forward/right/up axis. Check the orientation handedness of the axis, though, you may have flipped to left haded or right handed orientation when you have rotated in 4d. 
+
 Access latest Hypershack
 ------------------------
 
