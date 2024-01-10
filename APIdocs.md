@@ -180,6 +180,12 @@ Debug logging
 
 - [log](#log)
 
+Members
+- [name](#name)
+- [isCollider](#isCollider)
+- [creationTime](#creationTime)
+
+
 
 ---
 
@@ -724,3 +730,69 @@ log(message);
 // Example of logging a message to the Unity console
 log('This message will appear in browser console.');
 ```
+
+---
+
+### name
+
+**Description:**  
+The `name` property holds the name of the 4d object. It can be used to reference and distinguish this particular instance within the game environment, serving as a unique label for each object. Uniqueness is not enforced.
+
+**Syntax:**
+```javascript
+var objectName = go4d.name;
+```
+
+**Returns:**  
+- `String`: The name of the `go4d` object.
+
+**JavaScript Example:**
+```javascript
+// Retrieve the name of the go4d object
+var name = go4d.name;
+console.log('Object name: ' + name);
+```
+
+### isCollider
+
+**Description:**  
+The `isCollider` property indicates whether the `go4d` object functions as a collider in the game world. When set to `true`, the object does not let player pass the object. Note that the 4d collision detection is quite rudimentary, and it won't work if the colliders are made too thin. 
+
+**Syntax:**
+```javascript
+var colliderStatus = go4d.isCollider;
+```
+
+**Returns:**  
+- `Boolean`: True if the `go4d` object is a collider, false otherwise.
+
+**JavaScript Example:**
+```javascript
+// Check if the go4d object is a collider
+var isCollider = go4d.isCollider;
+console.log('Is the object a collider? ' + isCollider);
+```
+
+### creationTime
+
+**Description:**  
+The `creationTime` property stores the time at which the `go4d` object was instantiated. This timestamp can be used for tracking the duration since the object's creation or for event-triggering purposes based on its age.
+
+**Syntax:**
+```javascript
+var timeOfCreation = go4d.creationTime;
+```
+
+**Returns:**  
+- `Number`: The time at which the `go4d` object was created. 
+
+**JavaScript Example:**
+```javascript
+// Retrieve the creation time of the go4d object
+var creationTime = go4d.creationTime;
+console.log('Object was created at: ' + creationTime);
+```
+
+
+
+
