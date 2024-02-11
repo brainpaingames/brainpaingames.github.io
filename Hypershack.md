@@ -9,13 +9,13 @@ There are some issues with copy pasting to unity WebGL games, so unfortunately t
 
 Here are links to the json files and non-escaped js for the fivecell object of the hypermaze games of hypershack 0.2:
 
-[Javascript](examples/Level1js.js)
-[Hypermaze Level 1](examples/Hypermaze%20Level%201.json)
-[Hypermaze Level 2](examples/Hypermaze%20Level%202.json)
-[Hypermaze Level 3](examples/Hypermaze%20Level%203.json)
-[Hypermaze Level 4](examples/Hypermaze%20Level%204.json)
-[Hypermaze Level 5](examples/Hypermaze%20Level%205.json)
-[Hypermaze Level 6](examples/Hypermaze%20Level%206.json)
+- [Javascript](examples/Level1js.js)
+- [Hypermaze Level 1](examples/Hypermaze%20Level%201.json)
+- [Hypermaze Level 2](examples/Hypermaze%20Level%202.json)
+- [Hypermaze Level 3](examples/Hypermaze%20Level%203.json)
+- [Hypermaze Level 4](examples/Hypermaze%20Level%204.json)
+- [Hypermaze Level 5](examples/Hypermaze%20Level%205.json)
+- [Hypermaze Level 6](examples/Hypermaze%20Level%206.json)
 
 The game is borderline playable on standalone quest 2 using wolvic browser. Quest browser refuses to run it. It's recommended to run the game on a browser of vr-cabable computer, the expereince is much smoother there. 
 
