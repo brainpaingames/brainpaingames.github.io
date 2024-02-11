@@ -1,0 +1,156 @@
+[
+    {
+        "objecttype":"fivecell",
+        "gameobjectname":"Hypergem",
+        "colr":[1.0,0.0,0.0,0.0],
+        "points4d": [  
+            {"point": [0.0, 0.0, 0.0, 0.0]},
+            {"point": [1.0, 0.0, 0.0, 0.0]},
+            {"point": [0.5, 0.86603, 0.0, 0.0]},
+            {"point": [0.5, 0.28868, 0.8165, 0.0]},
+            {"point": [0.5, 0.28868, 0.40825, 0.8165]}
+        ],
+        "isDynamic": true,
+    "js": "try {\n\n//log(\"Executing js\");\n// initialize random seed\ngetSeed = function(){\n    return go4d.getIntRegistry(0);\n}\nsetSeed = function(newSeed){\n    log(\"setSeed(\" + newSeed + \")\");\n    go4d.setIntRegistry(0,newSeed);\n}\nif(getSeed()==0){\n    setSeed(42);\n    go4d.setUserProgrammableText2(\"X: Black guitar, Y: White drums, Z: Blue sax, W: Red bells\");\n\n}\n\n\n\n// floatRegistry(0) is the time of last collected hypergem\ngetStartTime = function(){\n    return go4d.getFloatRegistry(0); \n}\nsetStartTime = function(){\n    go4d.setFloatRegistry(0, go4d.getTime());\n}\nif(getStartTime() == 0){setStartTime();}\n// floatRegistry(1) is the max time to collect next hypergem\ngetGemTimer = function() {\n    return go4d.getFloatRegistry(1);\n}\nsetGemTimer = function(newTarget){\n    go4d.setFloatRegistry(1, newTarget);\n}\nif(getGemTimer()==0){setGemTimer(180.0);}\n\n\ngetTimeLeft = function(){\n    return Math.floor(getStartTime() + getGemTimer() - go4d.getTime());\n}\nvar timeLeft = getTimeLeft();\ngetGemCount = function(){\n    return go4d.getIntRegistry(1);\n}\nsetGemCount = function(newCount){\n    go4d.setIntRegistry(1,newCount);\n}\n// state = 0: game running, 1: Game over\ngetGameState = function(){\n    return go4d.getIntRegistry(2);\n}\nvar gs = getGameState();\nsetGameState = function(newState){\n    go4d.setIntRegistry(2,newState);\n}\n\n\n\n\n// generate list of thepositions\nconst point4dList = [\n    [1,5,5,5],\n    [9,5,5,5],\n    [5,1,5,5],\n    [5,9,5,5],\n    [5,5,1,5],\n    [5,5,9,5],\n    [5,5,5,1],\n    [5,5,5,9],\n    [5,5,5,5]\n];\n\nconst point4dNames =[\n    \"negative X face 1,5,5,5\",\n    \"positive X face 9,5,5,5\",\n    \"negative Y face 5,1,5,5\",\n    \"positive Y face 5,9,5,5\",\n    \"negative Z face 5,5,1,5\",\n    \"positive Z face 5,5,9,5\",\n    \"negative W face 5,5,5,1\",\n    \"positive W face 5,5,5,9\",\n    \"center          5,5,5,5\",\n    \n];\n\ngetNextGemName = function(){\n    return go4d.getStringRegistry(0);\n}\nsetNextGemName = function(nameidx){\n    go4d.setStringRegistry(0,point4dNames[nameidx]);\n}\n\n\n\nif(!getNextGemName()){\n    var P4d = point4dList[0];\n    go4d.jsSetPosition(P4d[0],P4d[1],P4d[2],P4d[3]);\n    setNextGemName(0);\n}\nvar nextGemName = getNextGemName();\n\n// check timer. If negative, game over.\n    if(gs < 1){\n        go4d.setUserProgrammableText1(getGemCount() + ' Hypergems. Time left:' + timeLeft + \" \\nNext gem: \" + nextGemName);\n    //    log(getGemCount() + ' Hypergems. Time left:' + timeLeft + \" next gem: \" + nextGemName);\n    }\n\n    if (go4d.getTime() > getStartTime() + getGemTimer() && gs < 1) {\n        // Game Over. \n        setGameState(1);\n        go4d.setUserProgrammableText1('Game Over! You got ' + getGemCount() + ' hypergems. \\nClick Restart to try again' );\n        log('Game Over! You got ' + getGemCount() + ' hypergems. \\nClick Restart to try again' );\n    }\n\n} catch (error) {\n    // This block will execute if any error occurs in the try block\n    log(\"################################################## Error in JavaScript execution First half: \" + error.message);\n    // Optionally log more details if needed\n    log(\"Stack Trace: \" + error.stack);\n}\n\nif (go4d.IsCollidedWithPlayer(0.0)) {\n    if (getGameState() == 0){\n        try {\n            var seed = getSeed();\n        const a = 1664525;\n        const c = 1013904223;\n        const m = Math.pow(2, 31) - 1;\n        var randomIndex = seed % point4dList.length;\n        var newRandomIndex;\n\n        do {\n            seed = (a * seed + c) % m;\n            newRandomIndex = seed % point4dList.length;\n        } while (newRandomIndex === randomIndex);\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution First half of the second half: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    log(\"seed before setSeed: \" + seed);\n    try {\n    \n        setSeed(seed); // Corrected the setSeed call\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution Setseed: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    try {\n        var randomPoint4d = point4dList[newRandomIndex];\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution Read from point4dlist: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    try {\n        \n        // Move to the random Point4d\n        go4d.jsSetPosition(randomPoint4d[0],randomPoint4d[1],randomPoint4d[2],randomPoint4d[3]);\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution jsSetposition: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    try {\n        setNextGemName(newRandomIndex);\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution setnextgemname: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    try {\n        // reset timer\n        setStartTime();\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution setstarttime: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    try {\n        var gemTimer = getGemTimer();\n        setGemTimer(gemTimer * 0.95);   \n        // add counter to intregistry(1)\n        var curcount = getGemCount();\n        setGemCount(curcount + 1);\n        // print count to screen\n    } catch (error) {\n        // This block will execute if any error occurs in the try block\n        log(\"################################################## Error in JavaScript execution Block2: \" + error.message);\n        // Optionally log more details if needed\n        log(\"Stack Trace: \" + error.stack);\n    }\n    }\n}\n "
+        },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall1",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,-1] },
+            {"point": [11,-1,-1,-1] },
+            {"point": [-1,11,-1,-1] },
+            {"point": [-1,-1,11,-1] },
+            {"point": [-1,-1,-1,0] }        
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall2",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,10] },
+            {"point": [11,-1,-1,10] },
+            {"point": [-1,11,-1,10] },
+            {"point": [-1,-1,11,10] },
+            {"point": [-1,-1,-1,11]}
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall3",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,-1]},
+            {"point": [0 ,-1,-1,-1]},
+            {"point": [-1,11,-1,-1]},
+            {"point": [-1,-1,11,-1]},
+            {"point": [-1,-1,-1,11]}
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall4",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [10,-1,-1,-1] },
+            {"point": [11,-1,-1,-1]},
+            {"point": [10,11,-1,-1] },
+            {"point": [10,-1,11,-1] },
+            {"point": [10,-1,-1,11] }
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall5",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,-1]},
+            {"point": [11,-1,-1,-1]},
+            {"point": [-1,0 ,-1,-1]},
+            {"point": [-1,-1,11,-1]},
+            {"point": [-1,-1,-1,11]}
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall6",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,10,-1,-1] },
+            {"point": [11,10,-1,-1] },
+            {"point": [-1,11,-1,-1]},
+            {"point": [-1,10,11,-1] },
+            {"point": [-1,10,-1,11] }
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall7",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,-1,-1]},
+            {"point": [11,-1,-1,-1]},
+            {"point": [-1,11,-1,-1]},
+            {"point": [-1,-1,0 ,-1]},
+            {"point": [-1,-1,-1,11]}
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"OuterWall8",
+        "colr":[0.8,0.8,1.0,0.0],
+        "points4d":[  
+            {"point": [-1,-1,10,-1] },
+            {"point": [11,-1,10,-1] },
+            {"point": [-1,11,10,-1] },
+            {"point": [-1,-1,11,-1]},
+            {"point": [-1,-1,10,11] }
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"InnerBlock3",
+        "colr":[0.0,0.0,1.0,0.0],
+        "points4d":[  
+            {"point": [0.0,  0.0,  6.5,  4.0] },
+            {"point": [0.0,  0.0,  7.5,  4.0] },
+            {"point": [10,   0.0,  6.5,  4.0] },
+            {"point": [0.0,  10 ,  6.5,  4.0] },
+            {"point": [0.0,  0.0,  6.5,  10 ] }
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    },
+    {
+        "objecttype":"tesseract",
+        "gameobjectname":"InnerBlock4",
+        "colr":[0.0,1.0,1.0,0.0],
+        "points4d":[  
+            {"point": [0.0,  0.0,  4.0,  6.5] },
+            {"point": [0.0,  0.0,  4.0,  7.5] },
+            {"point": [10,   0.0,  4.0,  6.5] },
+            {"point": [0.0,  10,   4.0,  6.5] },
+            {"point": [0.0,  0.0,  10,   6.5] }
+        ],
+        "isDynamic": false,
+        "js": "// comment\ngo4d.isCollider = true;\n"
+    }
+]
