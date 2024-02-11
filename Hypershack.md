@@ -1,13 +1,13 @@
 Hypershack
 ----------
 
-Hypershack is a standalone, private space to tinker and learn with 4d objects in Virtual Reality. 
+Hypershack is a standalone, private space designed for tinkering and learning with 4D objects in Virtual Reality. 
 
-when you open Hypershack 0.2, you are provided predefined levels of a simple game where you need to find hypergems (red fivecells) within a tesseract. You can create your own 4d environments and games by defining the objects in json and specifying the object behaviour in javascript, [see api documentaion here.](APIdocs)   
+when you open Hypershack 0.2, you are provided predefined levels of a simple game where you need to find hypergems (red fivecells) within a tesseract. You can create your own 4d environments and games by defining the objects in json and specifying the object behaviour in JavaScript, [see api documentaion here.](APIdocs)   
 
-There are some issues with copy pasting to unity WebGL games, so unfortunately the process is a bit cumbersome and you need to upload the json using the load file button at the top of the screen.
+There are some issues with copy-pasting to unity WebGL games. So unfortunately the process of editing the JSON in game is a bit cumbersome and you need to upload the JSON using the Load File button at the top of the screen.
 
-Here are links to the json files and non-escaped js for the fivecell object of the hypermaze games of hypershack 0.2:
+Here are links to the JSON files and non-escaped JavaScript for the fivecell object of the hypermaze games of Hypershack 0.2:
 
 - [Javascript](examples/Level1js.js)
 - [Hypermaze Level 1](examples/Hypermaze%20Level%201.json)
@@ -17,10 +17,10 @@ Here are links to the json files and non-escaped js for the fivecell object of t
 - [Hypermaze Level 5](examples/Hypermaze%20Level%205.json)
 - [Hypermaze Level 6](examples/Hypermaze%20Level%206.json)
 
-The game is borderline playable on standalone quest 2 using wolvic browser. Quest browser refuses to run it. It's recommended to run the game on a browser of vr-cabable computer, the expereince is much smoother there. 
+The game is borderline playable on standalone Quest 2 using the Wolvic browser. The Quest browser refuses to run it. It's recommended to run the game on a VR-capable computer's browser, the experience is much smoother there. 
 
 
-Finally, a small hint. If you get lost with the orientations and want to get back to normal 3d orientation wihtout hither/thither component, first rotate yourself so that the red beacon is aligned as well as possible with the crosshair (that is, the red beacon is in front of you.) After that, rotate in forward/hither plane (click right trigger and push right thumbstick forward/backward) until you see the red bar disappear in the compass. Now you are in the "normal" 3d space and you can orient yourself with normal 3d rotations to align the forward/right/up axis. 
+Finally, a small hint. If you get lost with the orientations and want to return to normal 3d orientation wihtout the hither/thither component, first rotate yourself so that the red beacon is aligned as well as possible with the crosshair (that is, the red beacon is in front of you.) After that, rotate in the forward/hither plane (click right trigger and push right thumbstick forward/backward) until you see the red bar disappear in the compass. Now you are in the "normal" 3d space and you can orient yourself with normal 3d rotations to align the forward/right/up axis. 
 
 Access latest Hypershack
 ------------------------
