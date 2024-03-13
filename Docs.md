@@ -23,4 +23,4 @@ We have incorporated the following sound effects into our game, with thanks to t
 The foundation of this project is based on the *WebXR-DePanther-VRTK* prototype. 
 - **WebXR-DePanther-VRTK**: [GitHub Repository](https://github.com/De-Panther/unity-webxr-export)
 - **VRTK**: [Official Website](https://www.vrtk.io/)
-- **Prototype Demo**: [Play Here](https://firedragongamestudio.github.io/WebXR-DePanther-VRTK/)
+

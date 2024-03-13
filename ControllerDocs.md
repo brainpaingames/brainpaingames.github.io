@@ -39,7 +39,7 @@ The game is designed to be played in stationary pose, not roomscale. Left contro
 
 # Note on Keyboard Inputs
 
-The keyboard inputs in our 4D VR game have been implemented for earlier development and testing purposes. While they offer a basic means to navigate and interact with the game environment, these controls are not as refined as the VR controller inputs and are not expected to be developed further regardless of some missing ritation combinations and possible bugs that may be found. 
+The keyboard inputs in our 4D VR game have been implemented for earlier development and testing purposes. While they offer a basic means to navigate and interact with the game environment, these controls are not as refined as the VR controller inputs and are not expected to be developed further regardless of some missing rotation combinations and possible bugs that may be found. 
 
 These keyboard controls are included in the documentation for those who wish to explore the game without a VR headset or for preliminary testing purposes. We recommend using the VR controllers for the most complete and engaging experience in our game.
 
