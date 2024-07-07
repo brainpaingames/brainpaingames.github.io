@@ -1,6 +1,6 @@
 # Define the relative paths
 $targetFolder = ".\dev_build"
-$sourceFolder = "..\Hypersprawl\Hypersprawl\builds\webglbuild1"
+$sourceFolder = "..\Hypersprawl\builds\webglbuild1"
 
 # Get the current timestamp
 $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
