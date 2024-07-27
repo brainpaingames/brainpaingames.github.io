@@ -3,10 +3,6 @@ layout: default
 title: JSON/JavaScript API Reference for GameObject4d
 ---
 
-go4d members need to be documented and tested (name, iscollider etc.)
-
-
-
 # JSON format
 
 The 4d game object setup is defined by a list of json objcts. Here is an example of a list of a single 4d object, the attributes are explained below:
