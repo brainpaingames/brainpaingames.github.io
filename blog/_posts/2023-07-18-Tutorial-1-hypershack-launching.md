@@ -3,6 +3,8 @@ title: "Tutorial 1 - Hypershack - Launching"
 category: tutorial
 ---
 
+<b>Note, this post describes Hypershack version 0.1. Version 0.2 is pretty different.</b>
+
 This post explains how to run hypershack with or without selected VR hardware.  Thorough the tutorial it is assumed that the reader is familiar with rudimentary four-dimensional objects like 5-cells and tesseracts. If you are not familiar with these, some preliminary studying is highly recommended, for example "Flatland" by Edwin Abbott Abbot is a noteworthy read.
 
 <!--more-->

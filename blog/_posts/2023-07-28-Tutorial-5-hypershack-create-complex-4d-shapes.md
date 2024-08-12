@@ -2,6 +2,7 @@
 title: "Tutorial 5 - Hypershack - Create complex 4d shapes"
 category: tutorial
 ---
+<b>Note, this post describes Hypershack version 0.1. Version 0.2 is pretty different.</b>
 
 As hinted in the previous tutorials, the object json format is actually a list of json objects. This allows you to build more complex 4 dimensional objects by entering multiple objects into the list. Iin this tutorial we build an object that consists of one large green tessearct and three smaller tesseracts inside the Green one. 
 

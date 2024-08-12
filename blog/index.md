@@ -6,9 +6,7 @@ title: Blog
 permalink: /blog/
 ---
 
-# Blog
 
-Here are the latest posts from our blog:
 
 <ul>
   {% for post in site.posts %}

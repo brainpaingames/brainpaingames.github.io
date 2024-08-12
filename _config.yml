@@ -3,6 +3,7 @@ author: info@brainpaingames.com
 
 
 header_pages:
+ - blog/index.md
  - Docs.md
  - Hypershack.md
 title: Brainpaingames

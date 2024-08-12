@@ -2,6 +2,7 @@
 title: "Tutorial 4 - Hypershack - Getting unlost with the orientation"
 category: tutorial
 ---
+<b>Note, this post describes Hypershack version 0.1. Version 0.2 is pretty different.</b>
 
 At this point you have likely refreshed you browser window a few times because you are completely lost regarding how to get back to the initial orientation - or to any orientation where your orientation vectors are aligned with the xyz orw axis so you can start to think where you are. 
 

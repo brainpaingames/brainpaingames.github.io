@@ -2,6 +2,7 @@
 title: "Tutorial 3 - Hypershack - Create and upload simple 4d shapes"
 category: tutorial
 ---
+<b>Note, this post describes Hypershack version 0.1. Version 0.2 is pretty different.</b>
 
 So far we have been looking at the single red 5-cell. This post explains how to create some other simple objects in the 4d space of Hypershack. 
 

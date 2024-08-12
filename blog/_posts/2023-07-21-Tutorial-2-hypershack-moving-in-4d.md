@@ -2,6 +2,7 @@
 title: "Tutorial 2 - Hypershack - Moving in 4d"
 category: tutorial
 ---
+<b>Note, this post describes Hypershack version 0.1. Version 0.2 is pretty different.</b>
 
 This post explains how to move in 4d in Hypershack, and assumes you have launched Hypershack as explained in previous [tutorial](https://brainpaingames.github.io/site/blog/tutorials/2023/07/18/Tutorial-1-hypershack-launching.html) .
 
