@@ -9,7 +9,7 @@ Even if level 6 maze in hypershack 0.2 contains only 4 tesseracts, it feels pret
 
 <!--more-->
 
-![insert map png here](../../assets/images/level6map.png)
+![Level 6 map](/assets/images/level6map.png)
 
 In the map the red small cube is the initial position in the first row of plots and the position after rotating 90 degrees to different directions. To make sense of this, study first the first and second row, where there has been no rotation around 4th dimension, but only a normal rotation to right. 
 
