@@ -9,3 +9,5 @@ header_pages:
 title: Brainpaingames
 
 excerpt_separator: <!--more-->
+
+highlighter: rouge
