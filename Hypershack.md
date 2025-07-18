@@ -5,10 +5,10 @@ Hypershack is a standalone, private space designed for tinkering and learning wi
 
 There are some elements designed to help get oriented in the 4d world:
 
-- there are small particles falling down, i.e. moving towards negative y-axis. The speed they are falling depends on the orientation of the observed 3d space in the 4d world, the closer the 3d psace is aligned iwth y-axis, the faster the particles fall. If you rotate the 3d space to be perpendicular to y-axis, the particles do not move.
+- there are small particles falling down, i.e. moving towards negative y-axis. The speed they are falling depends on the orientation of the observed 3d space in the 4d world, the closer the 3d space is aligned with y-axis, the faster the particles fall. If you rotate the 3d space to be perpendicular to y-axis, the particles do not move.
 - the orientation vectors are written on the hud
-- there is a "compass" dispalying the projection of x,y,z and w axis on the 3d space.
-- if you click unmute, you also get sound beacons emitting sound from the direction of projected axis.
+- there is a "compass" displaying the projection of x,y,z and w axis on the 3d space.
+- if you click unmute, you also get auditory sensory augmentation. For each axis there is an instrument defined (x: Drums, y: Guitar, z: Strings, w: Synth) The more perpendicular the axis is to current 3d space, the higher is the respective volume. And if you are completely aligned to three axis, you hear only the one instrument. 
 
 You can also select "easy mode" that lets you only make 45 degree simple rotations to help you say oriented.
 
@@ -28,7 +28,7 @@ Here are links to the JSON files and non-escaped JavaScript for the fivecell obj
 
 
 
-The game is borderline playable on standalone Quest 2. If you have trouble with the Quest browser, try wolvic.  It's recommended to run the game on a VR-capable computer's browser, the experience is much smoother there. 
+The game is tested on standalone Quest 2. If you have trouble with the Quest browser, try wolvic. At pixel time both seem to be working fine.  
 
 
 Finally, a small hint. If you get lost with the orientations and want to return to normal 3d orientation wihtout the hither/thither component, first rotate yourself so that the red beacon is aligned as well as possible with the crosshair (that is, the red beacon is in front of you.) After that, rotate in the forward/hither plane (click right trigger and push right thumbstick forward/backward) until you see the red bar disappear in the compass. Now you are in the "normal" 3d space and you can orient yourself with normal 3d rotations to align the forward/right/up axis. 

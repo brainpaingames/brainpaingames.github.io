@@ -11,8 +11,8 @@ setSeed = function(newSeed){
 }
 if(getSeed()==0){
     setSeed(42);
-    go4d.setUserProgrammableText2("X: Black guitar, Y: White drums, Z: Blue sax, W: Red bells");
-
+    go4d.setUserProgrammableText2("X: Black Drums, Y: White Guitar, Z: Blue Strings, W: Red Synth");
+            // drums, guitar, synth, strings
 }
 
 
